@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "nextjs",
+  "builds": [{ "src": "web/package.json", "use": "@now/next" }],
+  "routes": [
+    {
+      "src": "^/(.*)$",
+      "dest": "/web/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
+    }
+  ]
+}
